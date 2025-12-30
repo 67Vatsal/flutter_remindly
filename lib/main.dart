@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
-void main() {
+import 'home/home.dart';
+import 'home/remindly.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Remindly.initialize();
   runApp(const MyApp());
 }
 
@@ -30,7 +35,8 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: HomePage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
